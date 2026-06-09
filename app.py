@@ -1,4 +1,19 @@
 import streamlit as st
+
+
+# Injecter du CSS pour forcer le texte à être visible dans les zones claires
+st.markdown(
+    """
+    <style>
+    /* Force le texte en noir pour les éléments de saisie ou blocs blancs */
+    .stTextArea textarea, .stTextInput input, .stMarkdown p {
+        color: #1E1E1E !important;
+    }
+    </style>
+    """,
+    unsafe_html=True
+)
+
 from google import genai
 from google.genai import types
 from docx import Document
